@@ -1,30 +1,44 @@
-# AGENT.md — Codex Context for `UAG-studio`
+# AGENT.md — Context for `UAG-studio`
 
 ## Repository Identity
-Repository: `UAG-studio`  
-Organization: `UAG-Labs`  
-GitHub description: React and Rust visual architecture graph editor for creating, validating, and exporting UAG projects.
+Repository: `UAG-studio`
+Organization: `UAG-Labs`
+Role: Human trust and inspection layer — visual graph editor, compiler panel, diagnostics display, read-only output viewer.
 
-## Non-Negotiable Rule
-The graph is the source of truth. The diagram is a view. The export is a projection.
-
-## Role
-Visual editor application owning React canvas, inspectors, panels, desktop/web shells, and Rust Studio engine integration.
+## Non-Negotiable Rules
+- The architecture graph is the source of truth.
+- The diagram is a view.
+- The export is a projection.
+- The code is a compilation target.
+- Studio is NOT a diagramming tool. It is the human trust layer for a graph-native architecture compiler.
+- Generated output is read-only in Studio. All developer intent flows through the graph, never through editing generated code.
+- Studio edits TAKG. Studio never writes UAGL directly.
+- Hole contracts, constraint nodes, and goal nodes are visible in Studio but their implementation is in adapters — Studio shows the contract, not the implementation.
+- Studio surfaces loss reports for every emitter. Hiding loss is not an option.
+- Event-driven incremental recompilation must be supported. Graph changes trigger targeted re-emit, not full recompilation.
 
 ## Technology
-React + TypeScript frontend, React Flow canvas, Tauri desktop shell, Rust system-level Studio engine.
+React + TypeScript frontend, React Flow canvas, Tauri desktop shell, Rust Studio engine.
 
 ## Dependency Boundary
-Depends on UAG-core for types and UAG-compiler for compile/validate/export.
+Depends on UAG-core for types. Depends on UAG-compiler for compile, validate, emit, diff, query. Does not depend on any other sibling repo.
 
 ## Expected Output
-Visual editor that creates/edits TAKG, calls compiler, displays diagnostics, and exports artifacts.
+- Visual canvas for editing all 7 TAKG primitives: nodes, edges, events, capabilities, resources, constraints, goals
+- Behavior layer editors: state machine editor, predicate builder, effect/transformation editors, hole contract viewer
+- Policy config panel for reviewing and editing naming conventions and adapter bindings
+- Compiler panel: trigger compilation, view target status, compilation readiness gaps
+- Diagnostics panel: errors, warnings, loss reports
+- Loss report panel: per-node per-emitter loss detail
+- Output viewer: read-only display of generated code, diagrams, CI/CD configs
+- Hole registry: all Hole nodes with contract details and adapter routing
+- Event-driven incremental recompilation integration
 
 ## Working Instructions
-1. Read `README.md`, `docs/architecture.md`, `docs/artifact.md`, `docs/REPOSITORY_STRUCTURE.md`, and `docs/specs/README.md` before implementation.
+1. Read `README.md`, `docs/architecture.md`, `docs/artifact.md`, `docs/REPOSITORY_STRUCTURE.md`, and `docs/specs/README.md` before any work.
 2. Add or update specs using `docs/procedures/add-specification-file.md`.
 3. Do not implement undocumented behavior.
-4. Do not create unresolved implementation questions. Record blockers in `docs/open-questions.md` and stop.
-5. Preserve TAKG as editable source graph and UAGL as compiled IR.
-6. Keep generated output deterministic wherever possible.
+4. Do not create unresolved questions. Record blockers in `docs/open-questions.md` and stop.
+5. Preserve the trust model: Studio is for human inspection and approval. Generated output is always read-only in Studio.
+6. Keep compiler integration clean — Studio calls UAG-compiler, it does not duplicate compiler logic.
 7. Keep repo responsibilities inside this repo's boundary.
