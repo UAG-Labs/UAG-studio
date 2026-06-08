@@ -1,7 +1,7 @@
-# Plan: PLAN-001 — Bootstrap `UAG-studio`
+# Plan: PLAN-001 - Bootstrap `UAG-studio`
 
-**Status:** Draft  
-**Derived From:** ../specs/README.md  
+**Status:** Draft
+**Derived From:** ../specs/README.md
 **Derivation Status:** Current
 
 ## Objective
@@ -14,6 +14,17 @@ Create the initial implementation skeleton exactly as defined in `../REPOSITORY_
 - ../architecture.md
 - ../REPOSITORY_STRUCTURE.md
 - ../specs/README.md
+
+## Architecture Graph Hardening
+Before Studio becomes the primary authoring surface, it must protect the graph contract:
+
+1. Use an adapter between TAKG and React Flow so canvas state never becomes language semantics.
+2. Preserve partial-invalid TAKG and display compiler diagnostics instead of blocking save.
+3. Keep view filters separate from layout coordinates and editor-only state.
+4. Open UAGL read-only until reverse import and import loss reports are trustworthy.
+5. Display diagnostics and loss reports with source-map navigation to canvas objects, source paths, package issues, or export artifacts.
+6. Apply classification/redaction warnings before AI context or public exports.
+7. Treat runtime observations as overlays/drift diagnostics, not editable design intent.
 
 ## Steps
 1. Create the root files and folders defined in `../REPOSITORY_STRUCTURE.md`.

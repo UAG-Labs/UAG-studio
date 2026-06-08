@@ -1,16 +1,28 @@
-# Roadmap — `UAG-studio`
+# Roadmap - `UAG-studio`
 
-## Phase 0 — Documentation Bootstrap
-Commit this documentation package.
+## Phase 1 - Workspace and App Shell
+See [PLAN-101](./PLAN-101-workspace-app-shell.md).
 
-## Phase 1 — Skeleton
-Create the file/folder skeleton exactly as defined in `docs/REPOSITORY_STRUCTURE.md`.
+## Phase 2 - Project State and Bindings
+See [PLAN-102](./PLAN-102-project-state-bindings.md).
 
-## Phase 2 — First Functional Slice
-Implement the smallest vertical slice that satisfies the first system spec.
+## Phase 3 - Graph Canvas Adapter
+See [PLAN-103](./PLAN-103-graph-canvas-adapter.md).
 
-## Phase 3 — Validation
-Add tests for the acceptance criteria.
+## Phase 4 - File IO and Project Lifecycle
+See [PLAN-104](./PLAN-104-file-io-project-lifecycle.md).
 
-## Phase 4 — Cross-Repo Alignment
-Confirm this repo still obeys the dependency boundary defined in `ADR-0001`.
+## Phase 5 - Visual Editing and Inspectors
+See [PLAN-105](./PLAN-105-visual-editing-inspectors.md).
+
+## Phase 6 - Compiler Diagnostics and Exports
+See [PLAN-106](./PLAN-106-compiler-diagnostics-exports.md).
+
+## Phase 7 - Runtime Overlays and Advanced UX
+See [PLAN-107](./PLAN-107-runtime-overlays-advanced-ux.md).
+
+## Phase 8 - Release Hardening
+See [PLAN-108](./PLAN-108-release-hardening.md).
+
+## Final State
+The final state is defined in [PLAN-100](./PLAN-100-long-term-implementation.md).
