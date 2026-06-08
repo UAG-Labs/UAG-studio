@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="96" fill="#07111F"/>
+  <path d="M158 78 H310 L386 154 V412 H158 Z" fill="#0F172A" stroke="#35D3FF" stroke-width="14" stroke-linejoin="round"/>
+  <path d="M310 78 V154 H386" stroke="#35D3FF" stroke-width="14" stroke-linejoin="round"/>
+  <path d="M220 230 L256 286" stroke="#35D3FF" stroke-width="9" stroke-linecap="round"/>
+  <path d="M292 230 L256 286" stroke="#35D3FF" stroke-width="9" stroke-linecap="round"/>
+  <path d="M256 286 L214 334" stroke="#35D3FF" stroke-width="9" stroke-linecap="round"/>
+  <path d="M256 286 L300 334" stroke="#35D3FF" stroke-width="9" stroke-linecap="round"/>
+  <path d="M214 334 L300 334" stroke="#35D3FF" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="220" cy="230" r="14" fill="#FFFFFF" stroke="#35D3FF" stroke-width="7"/>
+  <circle cx="292" cy="230" r="14" fill="#FFFFFF" stroke="#35D3FF" stroke-width="7"/>
+  <circle cx="256" cy="286" r="14" fill="#FFFFFF" stroke="#35D3FF" stroke-width="7"/>
+  <circle cx="214" cy="334" r="14" fill="#FFFFFF" stroke="#35D3FF" stroke-width="7"/>
+  <circle cx="300" cy="334" r="14" fill="#FFFFFF" stroke="#35D3FF" stroke-width="7"/>
+  <text x="256" y="395" text-anchor="middle" fill="#FFFFFF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="48" font-weight="800">TAKG</text>
+</svg>

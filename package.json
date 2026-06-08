@@ -1,0 +1,1 @@
+{"name":"uag-studio","private":true,"version":"0.1.0","scripts":{"dev":"pnpm --filter @uag/studio-desktop dev","build":"pnpm -r build","test":"pnpm -r test"}}
